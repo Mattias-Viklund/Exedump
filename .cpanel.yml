@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/gcssffft/public_html/
-    - /bin/cp -R Blog $DEPLOYPATH
+    - /bin/cp -R blog $DEPLOYPATH
