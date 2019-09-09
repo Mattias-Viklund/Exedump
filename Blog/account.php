@@ -24,5 +24,6 @@ require_once("session.php");
 <a href="logout.php" style="float: right;">Sign Out</a>
 <a href="admin.php" style="float: right;">Admin</a>
 </div>
+<a>Nothing Here</a>
 </body>
 </html>
