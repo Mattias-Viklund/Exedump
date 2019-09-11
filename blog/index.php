@@ -8,6 +8,8 @@ require_once('HTML/BBCodeParser2.php');
 $config = parse_ini_file('BBCodeParser2.ini', true);
 $options = $config['HTML_BBCodeParser2'];
 $parser = new HTML_BBCodeParser2($options);
+require_once("session.php");
+$is_admin = is_admin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +49,11 @@ echo '<p>' . nl2br($parsed) . "</p>";
 echo "<br>";
 if (!empty($article["git_commit"]))
 echo '<a href="' . $article["git_commit"] . '">Github Commit</a>';
+if ($is_admin) {
+echo '<div class="admin_tools">';
+echo '<a href="edit.php?id='.$article["id"].'"></a>';
+echo '</div>';
+}
 echo '</div>';
 }
 }
