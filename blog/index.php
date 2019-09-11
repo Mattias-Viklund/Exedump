@@ -53,7 +53,8 @@ if ($is_admin) {
 echo '<br>';
 echo '<div class="admin_tools">';
 echo '<p>Admin Tools</p>';
-echo '<a href="edit.php?id='.$article["id"].'">Edit</a>';
+echo '<a href="admin/edit.php?id='.$article["id"].'">Edit</a>';
+echo '<a href="admin/delete.php?id='.$article["id"].'">Remove</a>';
 echo '</div>';
 }
 echo '</div>';
