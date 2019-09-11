@@ -28,8 +28,8 @@ input {
 }
 
 .admin_tools{
-    float: right;
-    
+    display: inline;
+
 }
 
 .newpost{
