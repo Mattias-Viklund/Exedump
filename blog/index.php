@@ -8,8 +8,8 @@ require_once('HTML/BBCodeParser2.php');
 $config = parse_ini_file('BBCodeParser2.ini', true);
 $options = $config['HTML_BBCodeParser2'];
 $parser = new HTML_BBCodeParser2($options);
-require_once("session.php");
-$is_admin = is_admin();
+$is_admin = isset($_SESSION["acctype"]) ?
+(($_SESSION["acctype"] == 0) ? true: false) : false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,13 +45,15 @@ echo '<img src="' . $article["thumbnail"] . '" width="256" alt="Click to open fu
 $parser->setText($article['content']);
 $parser->parse();
 $parsed = $parser->getParsed();
-echo '<p>' . nl2br($parsed) . "</p>";
-echo "<br>";
+echo '<p>' . nl2br($parsed) . '</p>';
+echo '<br>';
 if (!empty($article["git_commit"]))
 echo '<a href="' . $article["git_commit"] . '">Github Commit</a>';
 if ($is_admin) {
+echo '<br>';
 echo '<div class="admin_tools">';
-echo '<a href="edit.php?id='.$article["id"].'"></a>';
+echo '<p>Admin Tools</p>';
+echo '<a href="edit.php?id='.$article["id"].'">Edit</a>';
 echo '</div>';
 }
 echo '</div>';
