@@ -71,6 +71,7 @@ echo '<a href="admin/delete.php?id='.$article["id"].'">Remove</a>';
 echo '</div>';
 }
 echo '</div>';
+echo '<hr>';
 }
 }
 ?>
