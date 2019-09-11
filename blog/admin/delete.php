@@ -3,7 +3,6 @@
 session_start();
 ?>
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
 if (!isset($_GET["id"])) {
 echo '<script>';
 echo 'function GoBack(){';
@@ -12,7 +11,6 @@ echo 'window.location.href="' . $root . '"';
 echo '}</script>';
 } else {
 header("location: ../index.php");
-}
 }
 ?>
 <!DOCTYPE html>
@@ -25,7 +23,6 @@ header("location: ../index.php");
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="blog.css">
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
 if (!isset($_GET["id"])) {
 echo '<script>';
 echo 'function GoBack(){';
@@ -34,7 +31,6 @@ echo 'window.location.href="' . $root . '"';
 echo '}</script>';
 } else {
 header("location: ../index.php");
-}
 }
 ?>
 </head>
@@ -46,7 +42,6 @@ header("location: ../index.php");
 <a href="logout.php" style="float: right;">Sign Out</a>
 <a href="admin.php" style="float: right;">Admin</a>
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
 if (!isset($_GET["id"])) {
 echo '<script>';
 echo 'function GoBack(){';
@@ -55,7 +50,6 @@ echo 'window.location.href="' . $root . '"';
 echo '}</script>';
 } else {
 header("location: ../index.php");
-}
 }
 ?>
 </div>
