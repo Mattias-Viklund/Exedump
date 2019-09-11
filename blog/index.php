@@ -1,6 +1,11 @@
 <?php
 // Initialize the session
 session_start();
+$is_user = $is_admin = false;
+if (isset($_SESSION["acctype"])) {
+$is_user = true;
+$is_admin = (($_SESSION["acctype"] == 0) ? true : false);
+}
 ?>
 <?php
 require_once("config.php");
@@ -8,8 +13,6 @@ require_once('HTML/BBCodeParser2.php');
 $config = parse_ini_file('BBCodeParser2.ini', true);
 $options = $config['HTML_BBCodeParser2'];
 $parser = new HTML_BBCodeParser2($options);
-$is_admin = isset($_SESSION["acctype"]) ?
-(($_SESSION["acctype"] == 0) ? true: false) : false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,10 +28,20 @@ $is_admin = isset($_SESSION["acctype"]) ?
 <body>
 <div id="navbar">
 <a href="index.php">Home</a>
-<a href="index.php">Blog</a>
 <a href="account.php">Account</a>
-<a href="logout.php" style="float: right;">Sign Out</a>
-<a href="admin.php" style="float: right;">Admin</a>
+<?php
+if ($is_admin) {
+echo '<a href="post.php">New Post</a>';
+echo '<a href="admin.php">Admin Control</a>';
+}
+?>
+<?php
+if ($is_user) {
+echo '<a href="logout.php" style="float: right;">Sign Out</a>';
+} else {
+echo '<a href="login.php" style="float: right;">Sign In</a>';
+}
+?>
 <title>Index</title>
 </div>
 <div class="container">
@@ -52,7 +65,7 @@ echo '<a href="' . $article["git_commit"] . '">Github Commit</a>';
 if ($is_admin) {
 echo '<br>';
 echo '<div class="admin_tools">';
-echo '<p>Admin Tools</p>';
+echo '<b>Admin Tools</b>';
 echo '<a href="admin/edit.php?id='.$article["id"].'">Edit</a>';
 echo '<a href="admin/delete.php?id='.$article["id"].'">Remove</a>';
 echo '</div>';

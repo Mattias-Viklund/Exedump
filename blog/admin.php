@@ -1,6 +1,11 @@
 <?php
 // Initialize the session
 session_start();
+$is_user = $is_admin = false;
+if (isset($_SESSION["acctype"])) {
+$is_user = true;
+$is_admin = (($_SESSION["acctype"] == 0) ? true : false);
+}
 ?>
 <?php
 require_once "session.php";
@@ -22,14 +27,23 @@ header("location: Pages/notadmin.html");
 <body>
 <div id="navbar">
 <a href="index.php">Home</a>
-<a href="index.php">Blog</a>
 <a href="account.php">Account</a>
-<a href="logout.php" style="float: right;">Sign Out</a>
-<a href="admin.php" style="float: right;">Admin</a>
-<a href="post.php">New Post</a>
+<?php
+if ($is_admin) {
+echo '<a href="post.php">New Post</a>';
+echo '<a href="admin.php">Admin Control</a>';
+}
+?>
+<?php
+if ($is_user) {
+echo '<a href="logout.php" style="float: right;">Sign Out</a>';
+} else {
+echo '<a href="login.php" style="float: right;">Sign In</a>';
+}
+?>
 </div>
 <div class="container">
-<h5>Welcome <?php echo $_SESSION["username"] ?>.</h5>
+<h1>Admin Control</h1>
 </div>
 </body>
 </html>

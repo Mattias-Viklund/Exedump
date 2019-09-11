@@ -29,11 +29,12 @@ input {
 
 .admin_tools{
     display: inline;
+    padding: 5px 16px 10px 0px;
 
 }
 
-.admin_tools p, a {
-    padding: 5px 16px;
+.admin_tools a {
+    padding: 5px 0px 5px 10px;
 
 }
 
