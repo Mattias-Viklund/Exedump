@@ -30,7 +30,10 @@ session_start();
 </form>
 <script>
 function GoBack(){
-window.location.href = "../index.php";
+<?php
+$root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+echo 'window.location.href = "'.$root.'";'
+?>
 }
 </script>
 </body>
