@@ -58,7 +58,6 @@ require_once("articles.php");
 <?php
 $categories = get_categories($link);
 if (is_array($categories) || is_object($categories)) {
-echo count($categories);
 foreach ($categories as $cat) {
 echo '<li><a href="' . $_SERVER['PHP_SELF'] . '?category=' . $cat['id'] . '">' . $cat['name'] . '</a></li>';
 }
@@ -74,6 +73,11 @@ echo '<li><a href="' . $_SERVER['PHP_SELF'] . '?category=' . $cat['id'] . '">' .
 $articleCount = get_total_articles($link, $category)[0];
 $articles = articles_load($link, $resultsperpage, $resultsperpage * $page, $category);
 if (is_array($articles) || is_object($articles)) {
+if (count($categories) == 0)
+{
+echo '<li><p>No posts found.</p></li>';
+return;
+}
 foreach ($articles as $article) {
 echo '<div class="post">';
 echo '<h3>' . $article["title"] . '</h3>';
