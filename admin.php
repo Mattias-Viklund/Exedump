@@ -1,4 +1,3 @@
-<html>
 <?php
 // Initialize the session
 session_start();
@@ -14,6 +13,7 @@ if (!is_admin()) {
 header("location: pages/notadmin.html");
 }
 ?>
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

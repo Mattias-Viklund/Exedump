@@ -1,4 +1,3 @@
-<html>
 <?php
 // Initialize the session
 session_start();
@@ -55,6 +54,7 @@ mysqli_stmt_close($stmt);
 mysqli_close($link);
 }
 ?>
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

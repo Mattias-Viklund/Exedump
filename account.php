@@ -1,4 +1,3 @@
-<html>
 <?php
 // Initialize the session
 session_start();
@@ -11,6 +10,7 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 <?php
 require_once "session.php";
 ?>
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
