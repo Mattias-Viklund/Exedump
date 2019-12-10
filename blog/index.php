@@ -1,4 +1,5 @@
 <?php
+header('Set-Cookie: cross-site-cookie=name; SameSite=None; Secure');
 // Initialize the session
 session_start();
 $is_user = $is_admin = false;

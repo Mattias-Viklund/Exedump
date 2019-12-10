@@ -1,4 +1,5 @@
 <?php
+header('Set-Cookie: cross-site-cookie=name; SameSite=None; Secure');
 // Initialize the session
 session_start();
 $is_user = $is_admin = false;
@@ -50,7 +51,6 @@ if (isset($_POST["id"])) {
 require_once("../../config.php");
 require_once("../articles.php");
 delete_article($link, $_POST["id"]);
-header("location: ../index.php");
 } else {
 header("location: ../index.php");
 }
