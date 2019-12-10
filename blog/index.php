@@ -58,6 +58,10 @@ require_once("articles.php");
 <?php
 $categories = get_categories($link);
 if (is_array($categories) || is_object($categories)) {
+if (sizeof($categories) == 0)
+{
+echo '<li><p>No posts found.</p></li>';
+}
 foreach ($categories as $cat) {
 echo '<li><a href="' . $_SERVER['PHP_SELF'] . '?category=' . $cat['id'] . '">' . $cat['name'] . '</a></li>';
 }
