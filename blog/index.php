@@ -73,8 +73,7 @@ echo '<li><a href="' . $_SERVER['PHP_SELF'] . '?category=' . $cat['id'] . '">' .
 $articleCount = get_total_articles($link, $category)[0];
 $articles = articles_load($link, $resultsperpage, $resultsperpage * $page, $category);
 if (is_array($articles) || is_object($articles)) {
-if ($articleCount == 0)
-{
+if ($articleCount == 0) {
 echo '<h4>No posts found.</h4>';
 return;
 }
@@ -113,7 +112,10 @@ echo '<hr>';
 <?php
 $pages = ceil($articleCount / $resultsperpage);
 for ($i = 0; $i < $pages; $i++) {
+if ($category == -1)
 echo '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';
+else
+echo '<a href="' . $_SERVER['PHP_SELF'] . '?category=' . $category . '&page=' . $i . '">' . $i . '</a>';
 }
 ?>
 </div>
