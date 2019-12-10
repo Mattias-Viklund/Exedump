@@ -1,4 +1,4 @@
-#template("default.ttl")
+#template("blog.ttl")
 
 #start("Initialize")
 #end()
@@ -11,4 +11,11 @@
 #end()
 
 #start("Body")
+#end()
+
+#start("Sidebar")
+<h3 class="m-shade"></h3>
+#end()
+
+#start("Main")
 #end()

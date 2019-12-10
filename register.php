@@ -1,3 +1,4 @@
+<html>
 <?php
 // Initialize the session
 session_start();
@@ -63,36 +64,38 @@ mysqli_stmt_close($stmt);
 mysqli_close($link);
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="blog.css">
 <title>Sign Up</title>
 </head>
 <body>
-<div id="navbar">
-<a href="index.php">Home</a>
-<a href="account.php">Account</a>
-<?php
-if ($is_admin) {
-echo '<a href="post.php">New Post</a>';
-echo '<a href="admin.php">Admin Control</a>';
-}
-?>
-<?php
-if ($is_user) {
-echo '<a href="logout.php" style="float: right;">Sign Out</a>';
-} else {
-echo '<a href="login.php" style="float: right;">Sign In</a>';
-}
-?>
-<title>Sign Up</title>
+<a href="index.php"><img class="title-img" src="/img/title.png" width="512px" /></a>
+<nav class="navbar navbar-expand-md m-dark">
+<a class="navbar-brand m-shade" href="index.php">EXEDUMP</a>
+<button class="navbar-toggler m-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="/blog/index.php">BLOG</a></li>
+<li class="nav-item"><a class="nav-link" href="/blog/downloads.php">DOWNLOADS</a></li>
+<li class="nav-item"><a class="nav-link" href="account.php">ACCOUNT</a></li>
+</ul>
 </div>
+</nav><br>
+<div class="container-fluid">
+<div class="row">
+<div class="col sidebar">
+<h3 class="m-shade">Create an account</h3>
+<p>Glad you want to sign up,<br>I mean, there's nothing you can do on here<br>But it makes me happy either way.</p>
+<p>Make sure you don't actually place one of your real passwords in here in case I get hacked.</p>
+</div>
+<div class="col-sm-10 m-content">
 <h2>Sign Up</h2>
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 <div>
@@ -116,5 +119,8 @@ echo '<a href="login.php" style="float: right;">Sign In</a>';
 </div>
 <p>Already have an account? <a href="login.php">Login here</a>.</p>
 </form>
+</div>
+</div>
+</div>
 </body>
 </html>
