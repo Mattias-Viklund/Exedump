@@ -73,7 +73,7 @@ echo '<li><a href="' . $_SERVER['PHP_SELF'] . '?category=' . $cat['id'] . '">' .
 $articleCount = get_total_articles($link, $category)[0];
 $articles = articles_load($link, $resultsperpage, $resultsperpage * $page, $category);
 if (is_array($articles) || is_object($articles)) {
-if (count($categories) == 0)
+if (count($articles) == 0)
 {
 echo '<li><p>No posts found.</p></li>';
 return;
