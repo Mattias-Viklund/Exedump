@@ -30,6 +30,7 @@ require_once "session.php";
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link" href="/blog/index.php">BLOG</a></li>
+<li class="nav-item"><a class="nav-link" href="/mume/index.php">MUME</a></li>
 <li class="nav-item"><a class="nav-link" href="/blog/downloads.php">DOWNLOADS</a></li>
 <li class="nav-item"><a class="nav-link" href="account.php">ACCOUNT</a></li>
 </ul>

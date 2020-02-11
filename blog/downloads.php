@@ -27,6 +27,7 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link" href="/blog/index.php">BLOG</a></li>
+<li class="nav-item"><a class="nav-link" href="/mume/index.php">MUME</a></li>
 <li class="nav-item"><a class="nav-link" href="/blog/downloads.php">DOWNLOADS</a></li>
 <li class="nav-item"><a class="nav-link" href="../account.php">ACCOUNT</a></li>
 </ul>
@@ -41,13 +42,10 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 </div>
 <div class="col-sm-10 m-content">
 <ul>
-<li>Zoinks Scoob!</li>
-<li>Bazinga!</li>
-<li>Test Test Test</li>
-<li>Test Test Test</li>
-<li>Test Test Test</li>
-<li>Test Test Test</li>
-<li>Test Test Test</li>
+<li><a href="https://github.com/Mattias-Viklund/">My own repositories, MUME unrelated.</a></li>
+<li><a href="https://github.com/MUME/MMapper">MMapper</a></li>
+<li><a href="https://github.com/MUME/PowTTY">Powtty</a></li>
+<li><a href="https://github.com/jpetazzo/mume/blob/master/arda.mm2">Latest Arda.mm2 Map</a></li>
 </ul>
 </div>
 </div>
