@@ -23,7 +23,7 @@ height: 100%;
 </style>
 </head>
 <body>
-<a href="index.php"><img class="title-img" src="/img/title.png" width="512px" /></a>
+<a href="index.php"><img class="title-img" src="/img/title.png" width="512px"/></a>
 <nav class="navbar navbar-expand-md m-dark">
 <a class="navbar-brand m-shade" href="index.php">EXEDUMP</a>
 <button class="navbar-toggler m-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
