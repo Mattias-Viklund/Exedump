@@ -7,6 +7,26 @@ $is_user = true;
 $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 }
 ?>
+<?php
+require_once("../../config.php");
+$deleted = false;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$id = test_input($_POST["id"]);
+}
+function get_freekills($link, $id)
+{
+$sql = "DELETE FROM `freekills` WHERE id=" . $id;
+$stmt = mysqli_prepare($link, $sql);
+echo $sql;
+if ($stmt) {
+if (mysqli_stmt_execute($stmt)) {
+$deleted = true;
+} else {
+echo "Something went wrong. Please try again later.";
+}
+}
+}
+?>
 <html>
 <head>
 <meta charset="utf-8">
@@ -15,10 +35,10 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../../blog.css">
-<title>Class Guide</title>
+<title>Tarkov Kill Pass</title>
 </head>
 <body>
-<a href="../../index.php"><img class="title-img" src="/img/title.png" width="512px" /></a>
+<a href="../../index.php"><img class="title-img" src="/img/title.png" width="512px"/></a>
 <nav class="navbar navbar-expand-md m-dark">
 <a class="navbar-brand m-shade" href="../../index.php">EXEDUMP</a>
 <button class="navbar-toggler m-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -29,6 +49,7 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 <li class="nav-item"><a class="nav-link" href="/blog/index.php">BLOG</a></li>
 <li class="nav-item"><a class="nav-link" href="/mume/index.php">MUME</a></li>
 <li class="nav-item"><a class="nav-link" href="/blog/downloads.php">DOWNLOADS</a></li>
+<li class="nav-item"><a class="nav-link" href="/tarkov/index.php">TARKOV</a></li>
 <li class="nav-item"><a class="nav-link" href="../../account.php">ACCOUNT</a></li>
 </ul>
 </div>
@@ -36,13 +57,19 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 <div class="container-fluid">
 <div class="row">
 <div class="col sidebar">
-<h3 class="m-shade">Warrior Guide</h3>
-<hr>
-<p>Written by <a href="https://mume.org/forum/memberlist.php?mode=viewprofile&u=441&sid=61cf45d5db21ecf0c78770200de6d3e4">Andróg</a></p>
+<h3 class="m-shade">Kill Pass</h3>
 </div>
 <div class="col-sm-10 m-content">
-<div class="txt_content">
-</div>
+<p>Get your Free Kill passes.</p>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+<?php echo $myNameErr; ?>
+Your Username: <input type="text" name="myname"><br>
+</form>
+<?php
+if ($deleted) {
+echo "<h5>Deleted Free-Kill pass.</h5>";
+}
+?>
 </div>
 </div>
 </div>

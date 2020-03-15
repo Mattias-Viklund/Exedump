@@ -14,13 +14,13 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../blog.css">
-<title>Downloads</title>
+<link rel="stylesheet" type="text/css" href="../../blog.css">
+<title>Tarkov Kill Pass</title>
 </head>
 <body>
-<a href="../index.php"><img class="title-img" src="/img/title.png" width="512px"/></a>
+<a href="../../index.php"><img class="title-img" src="/img/title.png" width="512px"/></a>
 <nav class="navbar navbar-expand-md m-dark">
-<a class="navbar-brand m-shade" href="../index.php">EXEDUMP</a>
+<a class="navbar-brand m-shade" href="../../index.php">EXEDUMP</a>
 <button class="navbar-toggler m-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -30,35 +30,23 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 <li class="nav-item"><a class="nav-link" href="/mume/index.php">MUME</a></li>
 <li class="nav-item"><a class="nav-link" href="/blog/downloads.php">DOWNLOADS</a></li>
 <li class="nav-item"><a class="nav-link" href="/tarkov/index.php">TARKOV</a></li>
-<li class="nav-item"><a class="nav-link" href="../account.php">ACCOUNT</a></li>
+<li class="nav-item"><a class="nav-link" href="../../account.php">ACCOUNT</a></li>
 </ul>
 </div>
 </nav><br>
 <div class="container-fluid">
 <div class="row">
 <div class="col sidebar">
-<h3 class="m-shade">Downloads</h3>
-<hr>
-<p>Select a file and press download, duh.</p>
+<h3 class="m-shade">Free-Kill passes.</h3>
+<p>Have you ever teamkilled your mates?
+Were they absolutely fucking pissed off?
+Well I have the solution for you!
+Just use a Free-Kill pass, and all will be forgiven.
+</p>
 </div>
 <div class="col-sm-10 m-content">
-<ul>
-<li><a href="https://github.com/Mattias-Viklund/">My own repositories, MUME unrelated.</a></li>
-<li><a href="https://github.com/MUME/MMapper">MMapper</a></li>
-<li><a href="https://github.com/MUME/PowTTY">Powtty</a></li>
-<li><a href="https://github.com/jpetazzo/mume/blob/master/arda.mm2">Latest Arda.mm2 Map</a></li>
-</ul>
-<h5>Archived Websites.</h5>
-<p>Download the zipped archives here. Last updated February 11th 2020.</p>
-<ul>
-<li><a href="../mume/mume.schimmelmann.us.zip">Jaraha's Mume Page.zip</a></li>
-<li><a href="../mume/mume.org.zip">MUME.ORG Wiki.zip</a></li>
-<li><a href="../mume/faine.org.zip">Faine's Mume Page.zip</a></li>
-<li><a href="../mume/tabris23.tripod.com.zip">Tripod's Mume Website.zip</a></li>
-<li><a href="../mume/mume.yllemo.com.zip">Yllemo's Mume Website.zip</a></li>
-<li><a href="../mume/mumeresource.wordpress.com.zip">Mumeresource.zip</a></li>
-<li><a href="../mume/vrak.zip">Vrak.zip</a></li>
-</ul>
+<a href="newfreekill.php" style="font-size: 25px">Give someone a Free-Kill pass.</a><br>
+<a href="getfreekills.php" style="font-size: 25px">Get your own Free-Kill passes.</a>
 </div>
 </div>
 </div>

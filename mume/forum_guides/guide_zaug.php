@@ -29,6 +29,7 @@ $is_admin = (($_SESSION["acctype"] == 0) ? true : false);
 <li class="nav-item"><a class="nav-link" href="/blog/index.php">BLOG</a></li>
 <li class="nav-item"><a class="nav-link" href="/mume/index.php">MUME</a></li>
 <li class="nav-item"><a class="nav-link" href="/blog/downloads.php">DOWNLOADS</a></li>
+<li class="nav-item"><a class="nav-link" href="/tarkov/index.php">TARKOV</a></li>
 <li class="nav-item"><a class="nav-link" href="../../account.php">ACCOUNT</a></li>
 </ul>
 </div>
